@@ -1,0 +1,21 @@
+### TEST GET / WEBSITE
+GET http://localhost:8008
+
+
+### CAN DO FOR DATA AS WELL(API)
+
+GET http://localhost:8008/api/data
+
+### DATA END FOR ADDDING A USER
+POST http://localhost:8008/api/data
+Content-Type: application/json
+
+{
+    "name": "stasta"
+}
+/// the post is telling us where the data is going to be 
+//added in our server
+
+
+### DELETE ENDPT
+DELETE http://localhost:8008/api/data
