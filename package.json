@@ -1,0 +1,23 @@
+{
+  "name": "-v",
+  "version": "1.0.0",
+  "description": "adf",
+  "main": "ls",
+  "scripts": {
+    "test": "ks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adish03101/backig.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adish03101/backig/issues"
+  },
+  "homepage": "https://github.com/Adish03101/backig#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
