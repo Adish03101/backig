@@ -18,3 +18,17 @@ Content-Type: application/json
     "username": "Peepee@sdfds.com",
     "password": "dsfsdfg"
 }
+
+### fetch all todos GET/TODOS
+
+GET http://localhost:5000/todos
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ0Mjk3NTY2LCJleHAiOjE3NDQzODM5NjZ9.SB_hxlTmtXXVF7Miv0y-_miYa0AnK4XVYKrelR-KJKI"
+
+### creates a new todo Post/ todos
+POST HTTP://localhost:5000/localhost:5000/todos
+Authorization: 
+Content-Type: application/json
+
+{
+    "task": "finish coding"
+}
