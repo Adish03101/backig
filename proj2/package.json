@@ -1,0 +1,19 @@
+{
+  "name": "proj2",
+  "version": "1.0.0",
+  "main": "new-server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file=.env --experimental-strip-types --experimental-sqlite ./src/new-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A full stach node application which uses NodeJs backend and a SQLlite and JWT authentication",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
