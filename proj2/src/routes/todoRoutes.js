@@ -20,12 +20,26 @@ router.post('/', (req, res) => {
 
 // update todo (to be implemented)
 router.put('/:id', (req, res) => {
+    const {completed} = req.body
+    const { id} = req.params
+    const {page} = req.query
     
+    const updattodo = db.prepare(`UPDATE todos SET completed = ? WHERE id = ?`)
+
+    updattodo.run(completed,id)
+
+    res.json({message: "completed"})
 })
 
 // delete todo (to be implemented)
 router.delete('/:id', (req, res) => {
-    // Your delete logic here
+    const {id} = req.params//params as it is dynamic
+    const userId = req.userId
+    const deletetodo = db.prepare(`DELETE FROM todos WHERE id = ? AND user_id = ?`)
+
+    deletetodo.run(id,userId)
+    res.send({message:"todo deleted"})
+
 })
 
 export default router

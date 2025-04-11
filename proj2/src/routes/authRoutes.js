@@ -24,7 +24,7 @@ router.post('/register', (req, res) => {
       { expiresIn: '24h' }
     )
 
-    return res.json({ token })
+   res.json({ token })
   } catch (err) {
     console.log(err.message)
     return res.sendStatus(503)
@@ -37,7 +37,7 @@ router.post('/login', (req, res) => {
   try {
     const get_user = db.prepare(`SELECT * FROM users WHERE username = ?`)
     const user = get_user.get(username)
-
+    console.log(user)
     if (!user) {
       return res.status(404).send({ message: 'User not found' })
     }
@@ -45,6 +45,7 @@ router.post('/login', (req, res) => {
     const password_is_valid = bcrypt.compareSync(password, user.password)
     if (!password_is_valid) {
       return res.status(401).send({ message: 'Invalid Password' })
+      
     }
 
     const token = jwt.sign(
@@ -53,7 +54,11 @@ router.post('/login', (req, res) => {
       { expiresIn: '24h' }
     )
 
-    return res.send({ token })
+    res.send({
+      message: 'Login successful',
+      user: { id: user.id, username: user.username },
+      token
+    })
   } catch (err) {
     console.log(err.message)
     return res.sendStatus(503)

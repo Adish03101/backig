@@ -6,8 +6,8 @@ POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-    "username": "Peepee@sdfds.com",
-    "password": "dsfsdfg"
+    "username": "hello@mail.com",
+    "password": "12345678"
 }
 
 ### LOGIN USER POST /AUTH/LOGIN
@@ -15,20 +15,32 @@ POST http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
-    "username": "Peepee@sdfds.com",
-    "password": "dsfsdfg"
+    "username": "hello@mail.com",
+    "password": "12345678"
 }
 
 ### fetch all todos GET/TODOS
 
 GET http://localhost:5000/todos
-Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ0Mjk3NTY2LCJleHAiOjE3NDQzODM5NjZ9.SB_hxlTmtXXVF7Miv0y-_miYa0AnK4XVYKrelR-KJKI"
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ0MzYxODcxLCJleHAiOjE3NDQ0NDgyNzF9.mobppT_Du_4lEcdCn7aj_J1CdL7-zomuYxSvg89GUHw
 ### creates a new todo Post/ todos
-POST HTTP://localhost:5000/localhost:5000/todos
-Authorization: 
+POST http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ0MzYxODcxLCJleHAiOjE3NDQ0NDgyNzF9.mobppT_Du_4lEcdCn7aj_J1CdL7-zomuYxSvg89GUHw
 Content-Type: application/json
 
 {
-    "task": "finish coding"
+  "task": "finish coding"
 }
+
+
+###update PUT/  TODO/ID
+PUT http://localhost:5000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ0MzYxODcxLCJleHAiOjE3NDQ0NDgyNzF9.mobppT_Du_4lEcdCn7aj_J1CdL7-zomuYxSvg89GUHw
+Content-Type: application/json
+{
+    "completed": 1
+}
+
+###delete todo DELETE/TODOS/:ID
+DELETE http://localhost:5000/todos/2Authorization: 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ0MzYxNDA1LCJleHAiOjE3NDQ0NDc4MDV9.lBK0p47JzhE5x0Y_5zuwjM8hNsWERd5NXGxUZ_apc1I
